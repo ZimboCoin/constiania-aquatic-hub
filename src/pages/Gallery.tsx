@@ -6,71 +6,75 @@ import Footer from "@/components/Footer";
 import heroImage from "@/assets/hero-fish-farm.jpg";
 import fishSupplies from "@/assets/fish-supplies.jpg";
 import pondConstruction from "@/assets/pond-construction.jpg";
+import teamPond1 from "@/assets/team-pond-1.jpg";
+import pondLiner from "@/assets/pond-liner.jpg";
+import teamPond2 from "@/assets/team-pond-2.jpg";
+import teamPond3 from "@/assets/team-pond-3.jpg";
 
 const Gallery = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
-  // Placeholder gallery items - you can replace with actual images
+  // Real gallery items from Constiania Tradings projects
   const galleryItems = [
     {
       id: 1,
-      image: heroImage,
-      title: "Modern Fish Farming Facility",
-      category: "Facilities",
-      description: "State-of-the-art fish farming operation with advanced aeration systems"
+      image: teamPond1,
+      title: "Professional Team at Work",
+      category: "Team",
+      description: "Our expert team collaborating on pond construction project"
     },
     {
       id: 2,
-      image: fishSupplies,
-      title: "Premium Fish Feed",
-      category: "Products",
-      description: "High-quality fish feed pellets for optimal growth"
+      image: pondLiner,
+      title: "Pond Liner Installation",
+      category: "Construction",
+      description: "Professional pond liner installation for fish farming"
     },
     {
       id: 3,
-      image: pondConstruction,
-      title: "Pond Construction Project",
-      category: "Construction",
-      description: "Professional pond construction with modern filtration systems"
+      image: teamPond2,
+      title: "Project Implementation",
+      category: "Projects",
+      description: "Team working together on fish farming solution implementation"
     },
     {
       id: 4,
-      image: heroImage,
-      title: "Healthy Fish Stock",
-      category: "Fish",
-      description: "Thriving tilapia in our demonstration ponds"
+      image: teamPond3,
+      title: "Construction Process",
+      category: "Construction",
+      description: "Professional pond construction team at work site"
     },
     {
       id: 5,
       image: pondConstruction,
-      title: "Equipment Installation",
-      category: "Equipment",
-      description: "Professional installation of aeration and monitoring systems"
+      title: "Advanced Pond Construction",
+      category: "Construction",
+      description: "Professional installation of modern pond systems"
     },
     {
       id: 6,
       image: fishSupplies,
-      title: "Water Testing Kits",
+      title: "Quality Fish Supplies",
       category: "Products",
-      description: "Comprehensive water quality testing equipment"
+      description: "Premium fish feed and aquaculture supplies"
     },
     {
       id: 7,
       image: heroImage,
-      title: "Commercial Fish Farm",
+      title: "Fish Farming Excellence",
       category: "Facilities",
-      description: "Large-scale commercial aquaculture operation"
+      description: "Modern fish farming facility with healthy stock"
     },
     {
       id: 8,
       image: pondConstruction,
-      title: "Concrete Pond System",
-      category: "Construction",
-      description: "Durable concrete pond construction for long-term operations"
+      title: "Professional Installation",
+      category: "Equipment",
+      description: "Expert installation of pond equipment and systems"
     }
   ];
 
-  const categories = ["All", "Facilities", "Products", "Construction", "Equipment", "Fish"];
+  const categories = ["All", "Team", "Construction", "Projects", "Products", "Facilities", "Equipment"];
 
   const filteredItems = selectedCategory === "All" 
     ? galleryItems 
@@ -171,7 +175,7 @@ const Gallery = () => {
                 Facebook: Constiania Tradings
               </Badge>
               <Badge variant="outline" className="px-4 py-2">
-                WhatsApp: +263 123 456 789
+                WhatsApp: +263 773606044
               </Badge>
             </div>
           </div>

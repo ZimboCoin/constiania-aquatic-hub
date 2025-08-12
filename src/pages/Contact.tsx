@@ -48,7 +48,7 @@ const Contact = () => {
     {
       icon: Phone,
       title: "Phone",
-      details: ["+263 123 456 789", "+263 987 654 321"],
+      details: ["+263 773606044"],
       description: "Call us during business hours"
     },
     {
@@ -259,7 +259,7 @@ const Contact = () => {
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button variant="secondary" size="lg">
               <Phone className="h-5 w-5 mr-2" />
-              Emergency Line: +263 123 456 789
+              Emergency Line: +263 773606044
             </Button>
             <Button variant="outline" size="lg" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
               <Mail className="h-5 w-5 mr-2" />
