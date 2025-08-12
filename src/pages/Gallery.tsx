@@ -3,13 +3,14 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import heroImage from "@/assets/hero-fish-farm.jpg";
-import fishSupplies from "@/assets/fish-supplies.jpg";
-import pondConstruction from "@/assets/pond-construction.jpg";
-import teamPond1 from "@/assets/team-pond-1.jpg";
-import pondLiner from "@/assets/pond-liner.jpg";
-import teamPond2 from "@/assets/team-pond-2.jpg";
-import teamPond3 from "@/assets/team-pond-3.jpg";
+import pondConstruction1 from "@/assets/pond-construction-1.jpg";
+import teamWork1 from "@/assets/team-work-1.jpg";
+import fishFarmFacility from "@/assets/fish-farm-facility.jpg";
+import linerInstallation from "@/assets/liner-installation.jpg";
+import fishProducts from "@/assets/fish-products.jpg";
+import constructionTeam from "@/assets/construction-team.jpg";
+import equipmentSetup from "@/assets/equipment-setup.jpg";
+import projectSuccess from "@/assets/project-success.jpg";
 
 const Gallery = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -18,59 +19,59 @@ const Gallery = () => {
   const galleryItems = [
     {
       id: 1,
-      image: teamPond1,
-      title: "Professional Team at Work",
-      category: "Team",
-      description: "Our expert team collaborating on pond construction project"
+      image: pondConstruction1,
+      title: "Professional Pond Construction",
+      category: "Construction",
+      description: "Our expert team working on concrete pond installation"
     },
     {
       id: 2,
-      image: pondLiner,
+      image: linerInstallation,
       title: "Pond Liner Installation",
       category: "Construction",
       description: "Professional pond liner installation for fish farming"
     },
     {
       id: 3,
-      image: teamPond2,
-      title: "Project Implementation",
-      category: "Projects",
-      description: "Team working together on fish farming solution implementation"
+      image: teamWork1,
+      title: "Expert Team Consultation",
+      category: "Team",
+      description: "Aquaculture experts providing professional guidance"
     },
     {
       id: 4,
-      image: teamPond3,
-      title: "Construction Process",
-      category: "Construction",
-      description: "Professional pond construction team at work site"
+      image: constructionTeam,
+      title: "Construction Team at Work",
+      category: "Team",
+      description: "Professional construction team building quality ponds"
     },
     {
       id: 5,
-      image: pondConstruction,
-      title: "Advanced Pond Construction",
-      category: "Construction",
-      description: "Professional installation of modern pond systems"
+      image: fishFarmFacility,
+      title: "Modern Fish Farming Facility",
+      category: "Facilities",
+      description: "State-of-the-art aquaculture facility with multiple ponds"
     },
     {
       id: 6,
-      image: fishSupplies,
+      image: fishProducts,
       title: "Quality Fish Supplies",
       category: "Products",
       description: "Premium fish feed and aquaculture supplies"
     },
     {
       id: 7,
-      image: heroImage,
-      title: "Fish Farming Excellence",
-      category: "Facilities",
-      description: "Modern fish farming facility with healthy stock"
+      image: equipmentSetup,
+      title: "Equipment Installation",
+      category: "Equipment",
+      description: "Professional installation of aquaculture equipment"
     },
     {
       id: 8,
-      image: pondConstruction,
-      title: "Professional Installation",
-      category: "Equipment",
-      description: "Expert installation of pond equipment and systems"
+      image: projectSuccess,
+      title: "Successful Project Completion",
+      category: "Projects",
+      description: "Completed fish farming project with healthy stock"
     }
   ];
 
