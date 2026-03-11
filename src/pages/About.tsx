@@ -1,162 +1,129 @@
 import { Award, Users, Target, Heart } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import heroImage from "@/assets/hero-fish-farm.jpg";
 
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (i: number) => ({
+    opacity: 1, y: 0,
+    transition: { delay: i * 0.1, duration: 0.6, ease: [0.22, 1, 0.36, 1] }
+  })
+};
+
 const About = () => {
   const values = [
-    {
-      icon: Award,
-      title: "Quality Excellence",
-      description: "We maintain the highest standards in all our products and services, ensuring customer satisfaction and optimal results."
-    },
-    {
-      icon: Users,
-      title: "Customer-Centric",
-      description: "Our customers are at the heart of everything we do. We provide personalized solutions and ongoing support."
-    },
-    {
-      icon: Target,
-      title: "Innovation",
-      description: "We continuously seek innovative solutions and technologies to advance the aquaculture industry in Zimbabwe."
-    },
-    {
-      icon: Heart,
-      title: "Sustainability",
-      description: "We are committed to sustainable aquaculture practices that benefit both our customers and the environment."
-    }
+    { icon: Award, title: "Quality Excellence", description: "We maintain the highest standards in all our products and services." },
+    { icon: Users, title: "Customer-Centric", description: "Our customers are at the heart of everything we do." },
+    { icon: Target, title: "Innovation", description: "We continuously seek innovative solutions for aquaculture." },
+    { icon: Heart, title: "Sustainability", description: "Committed to sustainable aquaculture practices." },
   ];
 
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      
-      {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-r from-primary to-primary-dark">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-primary-foreground mb-6">
+
+      {/* Hero */}
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-[hsl(345,60%,22%)] via-[hsl(345,55%,32%)] to-[hsl(345,45%,45%)]" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+            <span className="inline-block px-4 py-1.5 bg-accent/20 text-accent rounded-full text-sm font-semibold tracking-wide uppercase mb-6 border border-accent/30">
+              Our Story
+            </span>
+            <h1 className="text-5xl md:text-6xl font-bold text-primary-foreground mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
               About Constiania Tradings
             </h1>
-            <p className="text-xl text-primary-foreground/90 max-w-3xl mx-auto">
+            <p className="text-xl text-primary-foreground/80 max-w-3xl mx-auto">
               Pioneering aquaculture solutions in Zimbabwe with dedication, expertise, and innovation
             </p>
-          </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* Story Section */}
-      <section className="py-16 bg-background">
+      {/* Story */}
+      <section className="py-24 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">Our Story</h2>
-              <div className="space-y-4 text-lg text-muted-foreground">
-                <p>
-                  Founded in Gweru, Zimbabwe, Constiania Tradings emerged from a passion for advancing 
-                  aquaculture practices in our region. Our journey began with a simple vision: to provide 
-                  local fish farmers with access to high-quality products and expert knowledge.
-                </p>
-                <p>
-                  Over the years, we have grown from a small local supplier to a trusted partner for 
-                  aquaculture operations across Zimbabwe. Our commitment to excellence and customer 
-                  satisfaction has made us a leader in the fisheries and fish farming industry.
-                </p>
-                <p>
-                  Today, we continue to expand our services and product offerings, always staying 
-                  true to our core mission of supporting sustainable aquaculture development 
-                  throughout the region.
-                </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
+              <span className="text-accent font-semibold text-sm uppercase tracking-wider">Our Journey</span>
+              <h2 className="text-4xl font-bold text-primary mt-3 mb-6" style={{ fontFamily: "'Playfair Display', serif" }}>Our Story</h2>
+              <div className="space-y-4 text-muted-foreground leading-relaxed">
+                <p>Founded in Gweru, Zimbabwe, Constiania Tradings emerged from a passion for advancing aquaculture practices in our region.</p>
+                <p>Over the years, we have grown from a small local supplier to a trusted partner for aquaculture operations across Zimbabwe.</p>
+                <p>Today, we continue to expand our services and product offerings, always staying true to our core mission.</p>
               </div>
-            </div>
-            <div className="relative">
-              <img 
-                src={heroImage} 
-                alt="Our fish farming facility" 
-                className="rounded-lg shadow-elegant"
-              />
-            </div>
+            </motion.div>
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={1} className="relative">
+              <div className="absolute -inset-4 bg-primary/5 rounded-3xl -rotate-3" />
+              <img src={heroImage} alt="Our fish farming facility" className="relative rounded-2xl shadow-elegant w-full" />
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-16 bg-cream">
+      <section className="py-24 bg-cream">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <Card className="p-8">
-              <CardHeader className="text-center pb-6">
-                <CardTitle className="text-2xl text-primary">Our Mission</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-lg text-center leading-relaxed">
-                  To provide comprehensive, high-quality aquaculture solutions that empower fish farmers 
-                  to achieve sustainable growth and profitability while contributing to food security 
-                  in Zimbabwe.
-                </CardDescription>
-              </CardContent>
-            </Card>
-            
-            <Card className="p-8">
-              <CardHeader className="text-center pb-6">
-                <CardTitle className="text-2xl text-primary">Our Vision</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-lg text-center leading-relaxed">
-                  To be the leading aquaculture solutions provider in Zimbabwe, recognized for our 
-                  innovation, quality, and commitment to advancing sustainable fish farming practices 
-                  across the region.
-                </CardDescription>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Values Section */}
-      <section className="py-16 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Our Values</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              The principles that guide our work and relationships with customers and partners
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((value, index) => (
-              <Card key={index} className="text-center hover:shadow-elegant transition-all duration-300">
-                <CardHeader>
-                  <div className="mx-auto bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mb-4">
-                    <value.icon className="h-8 w-8 text-primary" />
-                  </div>
-                  <CardTitle className="text-xl">{value.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="leading-relaxed">
-                    {value.description}
-                  </CardDescription>
-                </CardContent>
-              </Card>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {[
+              { title: "Our Mission", text: "To provide comprehensive, high-quality aquaculture solutions that empower fish farmers to achieve sustainable growth and profitability." },
+              { title: "Our Vision", text: "To be the leading aquaculture solutions provider in Zimbabwe, recognized for our innovation, quality, and commitment." },
+            ].map((item, i) => (
+              <motion.div key={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={i}>
+                <Card className="p-8 border-0 shadow-card h-full">
+                  <CardHeader className="text-center pb-4">
+                    <CardTitle className="text-2xl text-primary" style={{ fontFamily: "'Playfair Display', serif" }}>{item.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="text-base text-center leading-relaxed">{item.text}</CardDescription>
+                  </CardContent>
+                </Card>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Commitment Section */}
-      <section className="py-16 bg-primary">
+      {/* Values */}
+      <section className="py-24 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-6">
-              Our Commitment to Excellence
-            </h2>
-            <p className="text-xl text-primary-foreground/90 max-w-4xl mx-auto leading-relaxed">
-              At Constiania Tradings, we are committed to providing not just products, but complete solutions. 
-              Our team of experts works closely with each customer to understand their unique needs and provide 
-              tailored recommendations that ensure success in their aquaculture ventures.
-            </p>
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0} className="text-center mb-16">
+            <span className="text-accent font-semibold text-sm uppercase tracking-wider">Our Principles</span>
+            <h2 className="text-4xl font-bold text-primary mt-3 mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>Our Values</h2>
+          </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {values.map((value, i) => (
+              <motion.div key={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={i + 1}>
+                <Card className="text-center border-0 shadow-card hover:shadow-elegant transition-all duration-500 hover:-translate-y-2 h-full">
+                  <CardHeader>
+                    <div className="mx-auto bg-accent/15 w-14 h-14 rounded-xl flex items-center justify-center mb-3">
+                      <value.icon className="h-7 w-7 text-accent" />
+                    </div>
+                    <CardTitle className="text-lg">{value.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription>{value.description}</CardDescription>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
           </div>
+        </div>
+      </section>
+
+      {/* Commitment CTA */}
+      <section className="py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-[hsl(345,60%,22%)] via-[hsl(345,55%,32%)] to-[hsl(345,45%,45%)]" />
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl font-bold text-primary-foreground mb-6" style={{ fontFamily: "'Playfair Display', serif" }}>
+            Our Commitment to Excellence
+          </h2>
+          <p className="text-xl text-primary-foreground/80 leading-relaxed">
+            At Constiania Tradings, we provide not just products, but complete solutions. Our team works closely with each customer to ensure success in their aquaculture ventures.
+          </p>
         </div>
       </section>
 
